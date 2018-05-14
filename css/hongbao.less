@@ -1,0 +1,132 @@
+@-webkit-keyframes shake {
+    0% {
+        -webkit-transform: rotate(2deg) translate3d(0, 0, 0)
+    }
+    50% {
+        -webkit-transform: rotate(-2deg) translate3d(0, 0, 0)
+    }
+    100% {
+        -webkit-transform: rotate(2deg) translate3d(0, 0, 0)
+    }
+}
+
+@-moz-keyframes shake {
+    0% {
+        transform: rotate(2deg) translate3d(0, 0, 0)
+    }
+    50% {
+        transform: rotate(-2deg) translate3d(0, 0, 0)
+    }
+    100% {
+        transform: rotate(2deg) translate3d(0, 0, 0)
+    }
+}
+
+@-ms-keyframes shake {
+    0% {
+        transform: rotate(2deg) translate3d(0, 0, 0)
+    }
+    50% {
+        transform: rotate(-2deg) translate3d(0, 0, 0)
+    }
+    100% {
+        transform: rotate(2deg) translate3d(0, 0, 0)
+    }
+}
+@keyframes shake {
+    0% {
+        transform: rotate(2deg) translate3d(0, 0, 0)
+    }
+    50% {
+        transform: rotate(-2deg) translate3d(0, 0, 0)
+    }
+    100% {
+        transform: rotate(2deg) translate3d(0, 0, 0)
+    }
+}
+
+@keyframes open {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes openBack {
+    0 {
+        transform: rotateX(-180deg);
+    }
+    50% {
+        transform: rotateX(-90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+//未开红包的长和开口红包顶端的宽比为0.36
+.hongbao {
+    width: 300px;
+    height: 453.33px;
+    position: relative;
+    top: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    background-image: url(../images/open-no.png);
+    background-repeat: no-repeat;
+    background-position: center 120px;
+    background-size:auto 333.33px;
+    .open-btn {
+        display: block;
+        position: absolute;
+        width: auto;
+        height: 5rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: calc(120px + 120px - 40px);
+        animation: open 0.2s linear 0.5s infinite alternate;
+        animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+        z-index: 10;
+        cursor: pointer;
+    }
+    .open-top {
+        display: block;
+        position: absolute;
+        height: 120px;
+        top: 120px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        opacity: 0;
+    }
+    .open-back {
+        display: block;
+        position: absolute;
+        width: auto;
+        height: 120px;
+        top: 0px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transform-origin: bottom;
+        transform: rotateX(-180deg);
+        opacity: 0;
+    }
+    .open-back.open-on {
+        animation: openBack linear .5s forwards;
+    }
+}
+
+.hongbao.shake {
+    animation: shake .2s infinite linear;
+    -webkit-animation: shake .2s infinite linear;
+}

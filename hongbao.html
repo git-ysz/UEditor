@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="./css/hongbao.css" />
+	</head>
+	<body>
+		<div class="hongbao">
+			<img class="open-btn" src="./images/open.png">
+			<img class="open-top" src="./images/open-back-1.png"/>
+			<img class="open-back" src="./images/open-back-2.png"/>
+		</div>
+		<script src="./js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./plugins/layui-v2.2.6/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/root.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//红包点击
+				var hongbaoFlag = true //控制点击一次
+				$(".open-btn").click(function() {
+					if ($('.open-back').hasClass('open-on')) {
+						return false
+					}
+					if (hongbaoFlag) {
+						hongbaoFlag = false
+						$(".hongbao").addClass("shake")
+						setTimeout(function() {
+							$(".hongbao").removeClass("shake")
+						}, 1500)
+						setTimeout(function(){						
+							$('.open-btn').fadeOut(100)
+						},1300)
+						setTimeout(function(){
+							$('.hongbao').css({'backgroundImage':'url(./images/open-before.png)'})
+							$('.open-top').css({'opacity':'1'})
+							$('.open-back').addClass('open-on').css('opacity','1')
+						},1600)
+						setTimeout(function(){
+							layer.msg('恭喜您收到5元红包')
+						},2500)
+					}
+				})
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="../css/hongbao.css" />
+		<style type="text/css">
+			img {
+				max-width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		dom
+		<div id="box" class="box" style="color: #FFFFFF;width: 300px;background: rgba(0,0,0,.3);">
+			<input style="border: 1px solid;" type="text" value="123" />
+			<img src="../images/keycode.png"/>
+		</div><br />
+		<a id="download" href="javascript:;" download="">下载</a>
+		<canvas id="canvas" style=""></canvas>
+		<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <g id="sea">
+        <rect id="black" fill="#000103" width="400" height="200"></rect>
+        <rect id="grey" fill="#E3E1DD" y="200" width="400" height="200"></rect>
+        <g id="fish" fill="#000103" data-svg-origin="84 200" transform="matrix(1,0,0,1,0,-58.42602041429507)" style="visibility: inherit; opacity: 1;">
+          <path d="M173.2 247.057l11.45-11.45-4.95-4.95-11.45 11.45-11.45-11.45-4.95 4.95 11.45 11.45-11.45 11.45 4.95 4.95 11.45-11.45 11.45 11.45 4.95-4.95-11.45-11.45zM84.004 316c0-64.065 51.935-116 116-116s116 51.935 116 116c0 .334 0 .667-.004 1v-1H84.004z" id="head" data-svg-origin="200 200" transform="matrix(0.99999,0.00332,-0.00332,0.99999,0.6657244588482172,-0.663515852992532)" style="fill: rgb(227, 225, 221); transform-origin: 0px 0px 0px;" data-original="M84 316c0-64.065 51.935-116 116-116s116 51.935 116 116H84zm84.5-53c8.56 0 15.5-6.94 15.5-15.5 0-8.56-6.94-15.5-15.5-15.5-8.56 0-15.5 6.94-15.5 15.5 0 8.56 6.94 15.5 15.5 15.5z"></path>
+          <path d="M173.2 247.057l11.45-11.45-4.95-4.95-11.45 11.45-11.45-11.45-4.95 4.95 11.45 11.45-11.45 11.45 4.95 4.95 11.45-11.45 11.45 11.45 4.95-4.95-11.45-11.45zM84.004 316c0-64.065 51.935-116 116-116s116 51.935 116 116c0 .334 0 .667-.004 1v-1H84.004z" id="dead"></path>
+          <g id="tail" data-svg-origin="200.76599884033203 308.55499267578125" transform="matrix(0.99996,0.0083,-0.0083,0.99996,2.570301866622941,-1.657249984970747)" style="fill: rgb(0, 1, 3); transform-origin: 0px 0px 0px;">
+            <path d="M200.766 308.555v78.45c-31.01 29.084-88.892 31.202-89 30.89 45.233-36.728 74.9-73.175 89-109.34zm0 0c14.1 36.165 43.767 72.612 89 109.34-.108.312-57.99-1.806-89-30.89v-78.45z" id="Combined-Shape"></path>
+          </g>
+        </g>
+      </g>
+</svg>
+		<script src="../js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="rasterizeHTML.allinone.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var canvas = document.getElementById('canvas');
+				rasterizeHTML.drawHTML('<a id="download" href="javascript:;" download="">下载</a>',canvas).then(function(res){
+					console.log(convertCanvasToImage(canvas))
+					console.log(res.svg)
+				})
+//				$('#canvas')[0].height = $('#box')[0].offsetHeight
+//				$('#canvas')[0].width = $('#box')[0].offsetWidth
+//				rasterizeHTML.drawDocument($('#box')[0],canvas).then(function success(renderResult){ //成功回调
+//					$('#download').click(function(){
+//						$(this).attr({
+//							'download': convertCanvasToImage(canvas).src,
+//							'href': convertCanvasToImage(canvas).src
+//						})
+//					})
+//				},function errors(e){ //错误回调
+//					console.log(e)
+//				})
+				function convertCanvasToImage(canvas) {
+					var image = new Image();
+					image.src = canvas.toDataURL("image/png");
+					return image;
+				}
+			})
+		</script>
+</body>
+</html>

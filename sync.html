@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" type="text/css" href="./plugins/layui-v2.2.6/layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="./css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="./css/index.css" />
+		<title>存储草稿</title>
+	</head>
+
+	<body>
+
+		<div class="sync-container">
+			<div class="sync-tab">
+				<ul class="sync-tab-title">
+					<li class="active"><i class="fa fa-cog"></i>&emsp;设置文章信息</li>
+					<li><i class="fa fa-refresh"></i>&emsp;同步设置</li>
+					<li><i class="fa fa-users"></i>&emsp;选择同步账号</li>
+				</ul>
+				<div class="sync-tab-content">
+					<div class="sync-tab-item">
+						<div class="set-inner layui-clear">
+							<div class="item-left"><span>封面</span>
+								<div class="btngroups">
+									<div class="upload-images-pool">
+										<label for='upload-input' style="display: block;width: 100%;height: 100%; cursor: pointer;z-index: 2;position: absolute;opacity: 0;"></label>
+										<div class="text-info"><i class="fa fa-plus-square-o"></i>&emsp;建议尺寸：900*500px</div>
+									</div>
+									<div class="chuangkit-design-button"><i class="fa fa-scissors"></i> 在线设计封面</div>
+									<div class="upload-images-input">
+										<input id="upload-input" type="file" multiple="" accept="image/jpeg,.jpg,image/gif,.gif,image/png,.png,image/bmp,.bmp,.jpeg">
+									</div>
+								</div>
+							</div>
+							<div class="item-right fr">
+								<div class="form-item layui-clear"><span>标题</span> <input name="title" type="text" placeholder="请输入标题"></div>
+								<div class="form-item layui-clear"><span>作者</span> <input name="author" type="text" placeholder="请输入作者"></div>
+								<div class="form-item layui-clear"><span>摘要</span> <textarea id="summary" name="summary" placeholder="选填，如果不填写会默认抓取正文前54个字"></textarea>
+									<div class="count">还可以输入<em>120</em>个字</div>
+								</div>
+								<div class="form-item layui-clear"><span>原文链接</span> <input name="endurl" type="text" placeholder="选填，请输入阅读原文链接"></div>
+							</div>
+						</div>
+						<div class="syncBtn">
+							<button class="nextBtn layui-btn" data-id='2'>下一步</button>
+						</div>
+					</div>
+					<div class="sync-tab-item layui-hide">
+						<div class="img-btn">
+							<div>
+								<img class="sync-single" data-id='3' src="images/sync_single.jpg" />
+								<p>单图文同步</p>
+							</div>
+							<div>
+								<img class="sync-multiple" data-id='3' src="images/sync_multiple.jpg" />
+								<p>多图文同步</p>
+							</div>
+							<div>
+								<img class="sync-save" data-id='3' src="images/sync_save.jpg" />
+								<p>保存至“我的内容”</p>
+							</div>
+						</div>
+						<div class="btns-tips">
+							<div class="tips">
+								<i class="fa fa-check-square-o"></i>
+								<span>同意将本文公开，让更多朋友在内容中心中阅读到您的文章，增加您的文章的影响与传播</span>
+							</div>
+						</div>
+						<div class="layui-hide sync-multiple-set">
+							<!--多图文同步设置-->
+							<div class="multiple-inner layui-clear">
+								<div class="layout-left">
+									<div class="maincontent layui-clear">
+										<div class="item">
+											<div class="cover"><img src="./images/open.png"></div>
+											<div class="info">
+												<div class="description">标题</div>
+												<div class="author">作者</div>
+												<div class="time">2018-04-04 16:09</div>
+												<a href="#" class="preview">预览</a>
+											</div>
+										</div>
+									</div>
+									<div id="laypage"></div>
+								</div>
+								<div class="layout-right">
+									<div class="list-main">
+										<div class="tips">一次最多同步8篇图文信息</div>
+									</div>
+									<div class="list-others">
+										<!--内容开始-->
+										<div class="list-others-item">
+											<div class="item-info">
+												<div class="title">测试</div>
+												<div class="cover"><img src="./images/open.png"></div>
+											</div>
+										</div>
+										<!--内容end-->
+										<div class="add-tip">
+											<div class="title">点击左侧内容选取图文</div>
+											<div class="cover"><i class="fa fa-image"></i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="syncBtn">
+								<button class="backBtn layui-btn" data-id='2'>上一步</button>
+								<button class="nextBtn layui-btn" data-id='3'>下一步</button>
+							</div>
+						</div>
+					</div>
+					<div class="sync-tab-item layui-hide">
+						<div id="authorization-inner">
+							<div class="auth-weixin">
+								<div class="auth-title"><i class="fa fa-weixin"></i> <span>已授权公众号</span></div>
+								<div class="auth-content layui-clear">
+									<div class="auth-content-left">
+										<div class="users-wrapper">
+											<div class="user active">
+												<div class="photo"><img src="http://tvax1.sinaimg.cn/crop.7.0.626.626.50/006MMEqSly8fmwxn9ud6nj30hs0heaay.jpg"></div>
+												<div class="nickname">盖伦叔叔</div>
+											</div>
+										</div>
+									</div>
+									<a href="#" target="_blank" class="auth-content-right weixin"><i class="fa fa-plus-square-o"></i> <em>新增公众号授权</em></a>
+								</div>
+							</div>
+							<div class="auth-weibo">
+								<div class="auth-title"><i class="fa fa-weibo"></i> <span>已授权微博账号</span></div>
+								<div class="auth-content layui-clear">
+									<div class="auth-content-left">
+										<div class="users-wrapper">
+											<div class="user">
+												<div class="photo"><img src="http://tvax1.sinaimg.cn/crop.7.0.626.626.50/006MMEqSly8fmwxn9ud6nj30hs0heaay.jpg"></div>
+												<div class="nickname">盖伦叔叔</div>
+											</div>
+										</div>
+									</div>
+									<a href="#" target="_blank" class="auth-content-right weibo"><i class="fa fa-plus-square-o"></i> <em>新增新浪微博授权</em></a>
+								</div>
+							</div>
+							<div class="syncBtn">
+								<button class="lastBtn layui-btn" data-id='2'>上一步</button>
+								<button class="doneBtn layui-btn">确定</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="./js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./plugins/layui-v2.2.6/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/root.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				//同步文章弹窗
+				/*
+				 * ele,调用该参数的this指向
+				 * syncTabItem，调用改参数的元素的sync-tab-item父元素
+				 * 
+				 * */
+				function pages(ele, syncTabItem) {
+					var index = ele.attr('data-id')
+					$('.sync-tab-title').find('li:nth-child(' + index + ')').addClass('active').siblings('li').removeClass('active')
+					if(ele.hasClass('nextBtn') || ele.hasClass('sync-single')) {
+						if(ele.parent().parent().hasClass('sync-multiple-set')) { //判断隐藏微博
+							$('.auth-weibo').css({'opacity': '0','pointer-events': 'none'})
+						}
+						if(ele.hasClass('sync-single')){
+							$('.auth-weibo').css({'opacity': '1','pointer-events': 'auto'})
+						}
+						syncTabItem.addClass('layui-hide').next().removeClass('layui-hide')
+						$('.sync-tab-title').find('li:nth-child(' + index + ')').prevAll().find('i').attr('class', 'fa fa-check-circle-o')
+					}
+					if(ele.hasClass('lastBtn')) {
+						syncTabItem.addClass('layui-hide').prev().removeClass('layui-hide')
+						$('.sync-tab-title').find('li:nth-child(' + index + ')').find('i').attr('class', 'fa fa-refresh')
+					}
+				}
+				//同步文章下一步
+				$('.sync-tab-item').on('click', '.nextBtn', function() {
+					var syncTabItem = $(this).parent().parent()
+					if(syncTabItem.hasClass('sync-multiple-set')) { //第二页多图二级
+						syncTabItem = $(this).parent().parent().parent()
+					}
+					pages($(this), syncTabItem)
+				})
+				//第二页对勾
+				$('.btns-tips').on('click', 'i', function() {
+					$(this).hasClass('fa-square-o') ? $(this).removeClass('fa-square-o').addClass('fa-check-square-o') : $(this).removeClass('fa-check-square-o').addClass('fa-square-o')
+				})
+				//第三页上一步
+				$('.sync-tab-item').on('click', '.lastBtn', function() {
+					var syncTabItem = $(this).parent().parent().parent()
+					pages($(this), syncTabItem)
+				})
+				//第二页多图二级上一步
+				$('.sync-tab-item').on('click', '.backBtn', function() {
+					$(this).parent().parent().addClass('layui-hide').prevAll().removeClass('layui-hide')
+				})
+				//第二页图片按钮
+				$('.sync-tab-item').on('click', '.img-btn img', function() {
+					var syncTabItem = $(this).parent().parent().parent()
+					if($(this).hasClass('sync-single')) { //单图文
+						pages($(this), syncTabItem)
+						$('.auth-weibo').removeClass('layui-hide')
+					}
+					if($(this).hasClass('sync-multiple')) { //多图文
+						$('.btns-tips').addClass('layui-hide').prev().addClass('layui-hide').end().next().removeClass('layui-hide')
+					}
+					if($(this).hasClass('sync-save')) { //保存我的图文
+						layer.msg('文章保存成功')
+					}
+				})
+				//授权账号点击效果
+				$('#authorization-inner').on('click', '.user', function() {
+					$(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active')
+				})
+				//确定同步按钮
+				$('.doneBtn').on('click',function(){
+					layer.msg('文章同步成功',{
+						anim: -1,
+						time: 1000,
+					},function(e){
+						var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+						parent.layer.close(index) //再执行关闭  
+					})
+				})
+
+			})
+		</script>
+
+	</body>
+
+</html>
