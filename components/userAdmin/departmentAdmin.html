@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>部门管理</title>
+		<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+		<style type="text/css">
+			.folder-list li a {
+				width: 80%;
+				display: inline-block;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="w">
+			<div class="tabGroup">
+				<div class="tabTitle clearfix"><span class="tabli onTab">部门管理</span></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="ibox float-e-margins">
+						<div class="ibox-content min-h-700">
+							<div class="file-manager">
+								<h5>显示：</h5>
+								<a href="javascript:;" class="file-control active">所有</a>
+								<a href="javascript:;" class="file-control">招商部</a>
+								<a href="javascript:;" class="file-control">销售部</a>
+								<a href="javascript:;" class="file-control">设计部</a>
+								<div class="hr-line-dashed"></div>
+								<button class="btn btn-fx btn-sure btn-block" id="addDepartment"><i class="fa fa-plus"></i>&nbsp;添加部门</button>
+								<div class="hr-line-dashed"></div>
+								<h5>部门</h5>
+								<ul class="folder-list">
+									<li>
+										<a href="javascript:;"><i class="fa fa-plus"></i>&nbsp;招商部</a><i class="fa fa-edit"></i>
+										<ul class="folder-list mr-l20">
+											<li>
+												<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;部门1</a><i class="fa fa-edit"></i>
+											</li>
+											<li>
+												<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;部门2</a><i class="fa fa-edit"></i>
+											</li>
+											<li>
+												<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;部门3</a><i class="fa fa-edit"></i>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="javascript:;"><i class="fa fa-plus"></i>&nbsp;销售部</a><i class="fa fa-edit"></i>
+										<ul class="folder-list mr-l20">
+											<li>
+												<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;部门1</a><i class="fa fa-edit"></i>
+											</li>
+											<li>
+												<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;部门2</a><i class="fa fa-edit"></i>
+											</li>
+											<li>
+												<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;部门3</a><i class="fa fa-edit"></i>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="javascript:;"><i class="fa fa-plus"></i>&nbsp;设计部</a><i class="fa fa-edit"></i>
+										<ul class="folder-list mr-l20">
+											<li>
+												<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;部门1</a><i class="fa fa-edit"></i>
+											</li>
+											<li>
+												<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;部门2</a><i class="fa fa-edit"></i>
+											</li>
+											<li>
+												<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;部门3</a><i class="fa fa-edit"></i>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<!--<div class="clearfix m-l">
+						<button class="btn btn-fx btn-sure pull-left mr-r5 del"><i class="fa fa-fw fa-remove"></i>删除部门</button>						
+					</div>-->
+					<ol class="breadcrumb m-b m-l m-t">
+					  <li class="text-primary"><a href="#">招商部</a></li>
+					  <li class="active">部门1</li>
+					</ol>
+					<!--<h4 class="m-b m-t m-l"><strong>部门人员：</strong></h4>-->
+					<div class="row">
+						<div class="col-sm-12">
+							<!--部门人员-->
+							<div class="col-sm-4">
+								<div class="contact-box">
+									<a href="javascript:;">
+										<div class="col-sm-4">
+											<div class="text-center">
+												<img alt="image" class="img-circle m-t-xs img-responsive" src="../../images/a1.jpg">
+												<div class="m-t-xs font-bold">营销总监</div>
+											</div>
+										</div>
+									</a>
+									<div class="col-sm-8">
+										<h3><strong>灞波儿奔</strong></h3>
+										<p><i class="fa fa-map-marker"></i> 四川·成都</p>
+										<address>
+						          <strong>驭箭, Inc.</strong><br>
+						          E-mail:xxxxx@xxx.com<br>
+						          Weixin:<a href="javascript:;">xxxxxxxxxxx</a><br>
+						          <abbr title="Phone">Tel:</abbr> 13745654565
+						        </address>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="contact-box">
+									<a href="javascript:;">
+										<div class="col-sm-4">
+											<div class="text-center">
+												<img alt="image" class="img-circle m-t-xs img-responsive" src="../../images/a1.jpg">
+												<div class="m-t-xs font-bold">营销总监</div>
+											</div>
+										</div>
+									</a>
+									<div class="col-sm-8">
+										<h3><strong>灞波儿奔</strong></h3>
+										<p><i class="fa fa-map-marker"></i> 四川·成都</p>
+										<address>
+						          <strong>驭箭, Inc.</strong><br>
+						          E-mail:xxxxx@xxx.com<br>
+						          Weixin:<a href="javascript:;">xxxxxxxxxxx</a><br>
+						          <abbr title="Phone">Tel:</abbr> 13745654565
+						        </address>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--添加部门弹窗内容-->
+		<div class="addDepartmentHtml hidden">
+			<div class="ibox-content" style="padding-top: 20px;">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-3 control-label">部门名称：</label>
+						<div class="col-sm-8">
+							<input type="text" placeholder="部门名称" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">所属部门：</label>
+						<div class="col-sm-8">
+							<select class="form-control" name="">
+                <option>选项 1</option>
+                <option>选项 2</option>
+                <option>选项 3</option>
+                <option>选项 4</option>
+              </select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-8">
+							<button class="btn btn-fx btn-danger pull-right cancelAdd" type="button">取消</button>
+							<button class="btn btn-fx btn-sure pull-right saveAdd m-r-sm" type="button">保存</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<script src="../../js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/root.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#addDepartment').click(function() {
+					layer.open({
+						type: 1,
+						title: '添加部门',
+						content: $('.addDepartmentHtml').html(),
+						area: ['600px', '215px'],
+						success: function() {
+							$('.saveAdd').click(function(){
+								layer.msg('添加成功',{
+									time: 1000,
+								},function(){
+									layer.closeAll()
+								})
+							})
+							$('.cancelAdd').click(function(){
+								layer.closeAll()
+							})
+						}
+					}) //end layer
+				})
+				$('.fa-edit').click(function() {
+					layer.open({
+						type: 1,
+						title: '编辑部门',
+						content: $('.addDepartmentHtml').html(),
+						area: ['600px', '215px'],
+						success: function() {
+							$('.saveAdd').click(function(){
+								layer.msg('修改成功',{
+									time: 1000,
+								},function(){
+									layer.closeAll()
+								})
+							})
+							$('.cancelAdd').click(function(){
+								layer.closeAll()
+							})
+						}
+					}) //end layer
+				})
+				$('.del').click(function(){
+					layer.confirm('您确定要删除此部门？',{
+						btn: ['确定','取消']
+					})
+				})
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>驭箭客流系统云管理平台</title>
+		<!--[if lt IE 10]>		
+		<script type="text/javascript">
+			window.location.href = './ie.html';
+		</script>
+		<![endif]-->
+		<link rel="stylesheet" type="text/css" href="./css/index.css" />
+	</head>
+
+	<body>
+		<!--头部页首-->
+		<header>
+			<h1 class="fl" onclick="window.location.href = './index.html'"><i class="logo fl"></i>驭箭客流系统云管理平台</h1>
+			<div class="login fr">
+				<span class="fl"><i class="fa fa-fw fa-user"></i> 你好，奔波儿灞</span>
+				<div class="setBtn fl"><i class="fa fa-fw fa-gears"></i> 修改密码</div>
+				<div class="outBtn fl"><i class="fa fa-fw fa-power-off"></i> 退出</div>
+			</div>
+		</header>
+		<!--侧边栏-->
+		<aside>
+			<ul id="faMenu">
+				{{# layui.each(Routers,function(index,item){ }}
+				<li>
+					<div id="{{ item.type }}" class="asideTitle"><i class="{{ item.icon }}"></i>{{ item.name }}</div>
+					<ul class="sonMenu">
+						{{# layui.each(item.child,function(indexChild,itemChild){ }}
+						<li data-href="{{ itemChild.router }}"><i class="fa fa-fw fa-angle-right"></i>{{ itemChild.name }}</li>
+						{{# }) }}
+					</ul>
+				</li>
+				{{# }) }}
+			</ul>
+		</aside>
+		<!--主体内容-->
+		<div class="main">
+			<iframe src="" width="100%" height="100%"></iframe>
+		</div>
+		<!--版权-->
+		<div class="copyright text-right">
+			<a href="http://www.rocketcontrol.cn/" target="_blank">Copyright &copy;上海驭箭信息科技有限公司</a>
+			<span>联系电话：021-62360319</span>
+		</div>
+		<!--版权-->
+		<!--弹窗html-->
+		<div class="setBtnHtml hidden">
+			<div class="ibox-content" style="padding-top: 20px;">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-3 control-label">原密码：</label>
+						<div class="col-sm-8">
+							<input type="text" placeholder="原密码" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">修改后密码：</label>
+						<div class="col-sm-8">
+							<input type="password" placeholder="修改后密码" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">请再次输入密码：</label>
+						<div class="col-sm-8">
+							<input type="password" placeholder="请再次输入密码" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-8">
+							<button class="btn btn-fx btn-danger pull-right cancelAdd" type="button">取消</button>
+							<button class="btn btn-fx btn-sure pull-right saveAdd m-r-sm" type="button">保存</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!--全局js-->
+		<script src="./js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--layui,使用模板引擎模块-->
+		<script src="./plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<!--侧边栏路由，渲染菜单-->
+		<script data-main="js/json" src="js/require.js" type="text/javascript" charset="utf-8"></script>
+		<!--自定义-->
+		<script src="./js/root.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+
+			})
+		</script>
+	</body>
+
+</html>

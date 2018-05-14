@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>活动预览</title>
+		<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+		<style type="text/css">
+			.w {
+				padding: 0;
+				margin: 0 auto;
+				max-width: 500px;
+			}
+			
+			.scrollHtml {
+				width: 100%;
+				height: 100%;
+			}
+			
+			body,
+			html {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: auto;
+				overflow: hidden;
+				overflow-y: auto;
+			}
+			
+			iframe {
+				border: none;
+				margin: 0;
+			}
+			
+			img {
+				max-width: 100%;
+			}
+			
+			.fenxiang {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				background: #FFFFFF;
+				height: 40px;
+				width: 100%;
+				box-shadow: 0 -1px 2px 0 rgba(0,0,0,.3);
+				box-sizing: border-box;
+				padding: 5px;
+			}
+			.fenxiang-s {
+				height: 30px;
+				width: 100%;
+				opacity: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="../../js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/root.js" type="text/javascript" charset="utf-8"></script>
+		<!--模块代码容器-->
+		<div class="scrollHtml"></div>
+		<div class="fenxiang">
+			<a href="javascript:;" class="btn btn-danger btn-block">分享立即领取红包 >>></a>
+		</div>
+		<div class="fenxiang-s"></div>
+		<script type="text/javascript">
+			$(function() {
+				//单独文本，图片
+				var TextPhoto = [
+					'../subblock/Text.html',
+					'../subblock/Photo.html',
+				]
+				//标题
+				var TitleBlockURL = [
+					'../subblock/Title.html',
+					'../subblock/Title1.html',
+					'../subblock/Title2.html',
+					'../subblock/Title3.html',
+					'../subblock/Title4.html',
+					'../subblock/Title5.html',
+					'../subblock/Title6.html',
+					'../subblock/Title7.html',
+					'../subblock/Title8.html',
+					'../subblock/Title9.html',
+				]
+				//内容
+				var ContentBlockURL = [
+					'../subblock/ContentText.html',
+					'../subblock/ContentText1.html',
+					'../subblock/ContentText2.html',
+					'../subblock/ContentText3.html',
+					'../subblock/ContentText4.html',
+					'../subblock/ContentText5.html',
+					'../subblock/ContentText6.html',
+					'../subblock/ContentTimeAxis.html',
+					'../subblock/ContentTimeAxis1.html',
+					'../subblock/ContentHongBao.html',
+					'../subblock/ContentPhotoText.html',
+					'../subblock/ContentPhotoText1.html',
+					'../subblock/ContentPhotoText2.html',
+					'../subblock/ContentPhotoText3.html',
+					'../subblock/ContentPhotoText4.html',
+					'../subblock/ContentPhotoText5.html',
+					'../subblock/ContentPhotoText6.html',
+					'../subblock/ContentPhotoText7.html',
+					'../subblock/ContentText7.html',
+					'../subblock/ContentPhotoText8.html',
+					'../subblock/ContentPhotoText9.html',
+					'../subblock/ContentPhotoText10.html',
+					'../subblock/ContentPhotoText11.html',
+					'../subblock/ContentPhotoText12.html',
+					'../subblock/ContentText8.html',
+					'../subblock/ContentPhotoText13.html',
+					'../subblock/ContentPhotoText14.html',
+				]
+				//分割线
+				var DelimiterBlockURL = [
+					'../subblock/Delimiter.html',
+					'../subblock/Delimiter1.html',
+					'../subblock/Delimiter2.html',
+					'../subblock/Delimiter3.html',
+				]
+				//底部
+				var FooterBlockURL = [
+					'../subblock/Ewm.html',
+					'../subblock/Footer.html',
+					'../subblock/Footer1.html',
+					'../subblock/Footer2.html',
+					'../subblock/Footer3.html',
+					'../subblock/Footer4.html',
+					'../subblock/Footer5.html',
+					'../subblock/FooterLink.html',
+					'../subblock/FooterLink1.html',
+					'../subblock/FooterLink2.html',
+				]
+				//模板
+				var TemplateURL = [
+					'../template/TemplateFinance.html',
+					'../template/TemplatePromote.html',
+					'../template/TemplatePromote1.html',
+					'../template/TemplateRecruit.html',
+					'../template/TemplateShop.html',
+					'../template/TemplateShop1.html',
+					'../template/TemplateShop2.html',
+					'../template/TemplateShop3.html',
+					'../template/TemplateShop4.html',
+					'../template/TemplateMinimalism.html',
+					'../template/TemplateRestaurant.html',
+					'../template/TemplateRestaurant1.html',
+					'../template/TemplateShop5.html',
+				]
+				var activity = []
+				var hash = ''
+				var blockIndex = 0
+				addViewBlock()
+				window.onhashchange = function() { //监听hash改变
+					addViewBlock()
+				}
+				function addViewBlock() {
+					hash = window.location.hash
+					blockIndex = hash.substr(hash.indexOf('&') + 1)
+					hash = hash.substr(1, hash.indexOf('&') - 1)
+					//添加字符串到数组
+					switch(hash) {
+						case 'TextPhoto':
+							activity.push(TextPhoto[blockIndex])
+							break;
+						case 'TitleBlockURL':
+							activity.push(TitleBlockURL[blockIndex])
+							break;
+						case 'ContentBlockURL':
+							activity.push(ContentBlockURL[blockIndex])
+							break;
+						case 'DelimiterBlockURL':
+							activity.push(DelimiterBlockURL[blockIndex])
+							break;
+						case 'FooterBlockURL':
+							activity.push(FooterBlockURL[blockIndex])
+							break;
+						case 'TemplateURL':
+							activity.push(TemplateURL[blockIndex])
+							break;
+						default:
+							alert('出现未知错误。')
+							break;
+					}
+					activity.forEach(function(item) {
+						ajaxBlock($('.scrollHtml'), item)
+					})
+				}
+				function ajaxBlock(ele, url) { //利用ajax获取页面元素
+					$.ajax({
+						type: "get",
+						url: url,
+						async: false,
+						success: function(data) {
+							var bodyStart = data.indexOf('<body>') + 6
+							var bodyEnd = data.indexOf('</body>')
+							data = data.substring(bodyStart, bodyEnd)
+							ele.html(data)
+						},
+						error: function(e) {
+							e = '<style>h3,h2,h4,h5,h6{font-size:12px;width: 100%;word-wrap: break-word;}</style>' + e.responseText
+							ele.append(e)
+						}
+					})
+				} //end ajaxBlock
+			})
+//			 "<script>window.onload = function(){ var index = layer.msg('阅读并转发后领取红包'); layer.style(index,{'text-align': 'center','font-size': '12px','font-weight': 'bold'}); };<\/script>"
+		</script>
+
+	</body>
+
+</html>

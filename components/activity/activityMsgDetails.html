@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/index.css"/>
+	<title>活动详情</title>
+</head>
+<body>
+	<div class="w">
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="ibox">
+					<div class="ibox-content no-borders">
+						<h3>包含区块</h3><br />
+						<p>所有客户必须通过邮件验证</p>
+						<div class="input-group">
+							<input class="inputFxheight pull-left mr-r5" placeholder="请输入关键字" type="text">
+							<button class="btn btn-fx btn-sure pull-left mr-r5"><i class="fa fa-fw fa-search"></i>搜索</button>
+						</div>
+						<div class="clients-list">
+							<div class="tab-content">
+								<div class="tab-pane active" style="overflow-y: auto;min-height: 600px;">
+									<table class="table-default table table-striped table-hover">
+										<colgroup>
+									    <col width="15%">
+									    <col width="15%">
+									    <col width="40%">
+									    <col width="15%">
+									    <col width="15%">
+									  </colgroup>
+										<tbody class="text-center">
+											<tr>
+												<td class="client-avatar"><i class="fa fa-cube"></i></td>
+												<td>区块标题</td>
+												<td class="text-left">区块描述区块描述区块描述区块描述区块描述区块描述区块描述区块描述区块描述区块</td>
+												<td>区块类型</td>
+												<td class="client-status"><span class="label label-primary">使用中</span></td>
+											</tr>
+											<tr>
+												<td class="client-avatar"><i class="fa fa-cube"></i></td>
+												<td>区块标题</td>
+												<td class="text-left">区块描述区块描述区块描述区块描述区块描述区块描述区块描述区块</td>
+												<td>区块类型</td>
+												<td class="client-status"><span class="label label-info">未使用</span></td>
+											</tr>
+											<tr>
+												<td class="client-avatar"><i class="fa fa-cube"></i></td>
+												<td>区块标题</td>
+												<td class="text-left">区块描述区块描述区块描述区块描述区块描述区块描述区块描述区块</td>
+												<td>区块类型</td>
+												<td class="client-status"><span class="label label-cancel">审核未通过</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="ibox ">
+					<div class="ibox-content no-borders">
+						<div class="tab-content">
+							<div class="tab-pane active">
+								<div class="row m-b-lg">
+									<div class="col-lg-4 text-center">
+										<h3>活动标题</h3>
+										<div class="m-b-sm">
+											<img alt="image" class="img-preview-ssm" src="../../upload/113443972407b529393e24e9a1c65021ee94c7.png">
+										</div>
+									</div>
+									<div class="col-lg-8">
+										<h4>活动介绍</h4><br />
+										<p>&emsp;&emsp;活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍</p>
+									</div>
+								</div>
+								<strong>当前动态</strong>
+								<ul class="list-group clear-list">
+									<li class="list-group-item fist-item">
+										<span class="pull-right">2018-05-01</span> 创建时间
+									</li>
+									<li class="list-group-item">
+										<span class="pull-right">2018-05-01</span> 活动起始时间
+									</li>
+									<li class="list-group-item">
+										<span class="pull-right">2018-05-01</span> 活动结束时间
+									</li>
+									<li class="list-group-item">
+										<span class="pull-right">王小二</span> 创建人
+									</li>
+									<li class="list-group-item">
+										<span class="pull-right"><a href="https://www.baidu.com" target="_blank">https://www.baidu.com</a></span> 链接地址
+									</li>
+									<li class="list-group-item">
+										<span class="pull-right label label-primary">进行中</span>活动状态
+									</li>
+								</ul>
+								<strong>备注</strong>
+								<p>备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注</p>
+								<hr>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button type="button" class="btn btn-cancel btn-sm btn-block closeLayer"><i class="fa fa-arrow-circle-left"></i> 返回</button>
+			</div>
+		</div>
+	</div>
+	<script src="../../js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/root.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.closeLayer').on('click',function(){
+				var index = parent.layer.getFrameIndex(window.name) //先得到当前iframe层的索引
+				parent.layer.close(index) //执行关闭
+			})
+		})
+	</script>
+</body>
+</html>

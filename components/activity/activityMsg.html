@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>活动信息</title>
+		<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+	</head>
+
+	<body>
+		<div class="w">
+			<div class="tabGroup">
+				<div class="tabTitle clearfix"><span class="tabli onTab">全部</span><span class="tabli">未上架</span><span class="tabli">已上架</span><span class="tabli">已结束</span></div>
+				<div class="tabBody">
+					<div class="tabMain onMain">
+						
+						<div class="form-inline clearfix mr-b10">
+							<div class="clearfix">
+								<div class="pull-left clearfix">
+									<input class="inputFxheight pull-left mr-r5" placeholder="请输入关键字" type="text">
+							<input class="inputFxheight pull-left mr-r5 startTime" placeholder="起始时间" type="text">
+							<input class="inputFxheight pull-left mr-r5 endTime" placeholder="结束时间" type="text">
+							<select class="inputFxheight pull-left mr-r5">
+								<option>--活动类型--</option>
+								<option>类型1</option>
+								<option>类型2</option>
+								<option>类型3</option>
+							</select>
+							<button class="btn btn-fx btn-sure pull-left mr-r5"><i class="fa fa-fw fa-search"></i>搜索</button>
+								</div>
+								<div class="paginglist pull-right">
+									<div>共<i class="text-warning"> 123 </i>条记录</div>
+									<strong>上一页</strong> <span><small>1</small><em>/</em><small>2</small></span> <strong>下一页</strong> <input type="text" />
+									<div>跳转</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="mr-b10">
+							<table class="table table-bordered table-default table-hover">
+								<colgroup>
+							    <col width="18%">
+							    <col>
+							    <col width="18%">
+							    <col>
+							    <col width="18%">
+							    <col>
+							    <col>
+							  </colgroup>
+								<thead>
+									<tr>
+										<th class="text-center">活动标题</th>
+										<th class="text-center">作者</th>
+										<th class="text-center">创建时间</th>
+										<th class="text-center">活动分类</th>
+										<th class="text-center">备注</th>
+										<th class="text-center">状态</th>
+										<th class="text-center">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="text-center">红包</td>
+										<td class="text-center">三毛</td>
+										<td class="text-center">2018-03-30 15:37:47</td>
+										<td class="text-center">交互</td>
+										<td class="text-center">备注备注备注备注备注备注</td>
+										<td class="text-center"><span class="text-danger">未上架</span></td>
+										<td class="text-center">
+											<a href="javascript:;" class="text-primary activityBlockEdit"><i class="fa fa-eye"></i>&nbsp;查看</a>
+											<a href="javascript:;" class="text-primary del"><i class="fa fa-remove"></i>&nbsp;删除</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center">红包</td>
+										<td class="text-center">三毛</td>
+										<td class="text-center">2018-03-30 15:37:47</td>
+										<td class="text-center">交互</td>
+										<td class="text-center">备注备注备注备注备注备注</td>
+										<td class="text-center"><span class="text-success">已上架</span></td>
+										<td class="text-center">
+											<a href="javascript:;" class="text-primary activityBlockEdit"><i class="fa fa-eye"></i>&nbsp;查看</a>
+											<a href="javascript:;" class="text-primary del"><i class="fa fa-remove"></i>&nbsp;删除</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center">红包</td>
+										<td class="text-center">三毛</td>
+										<td class="text-center">2018-03-30 15:37:47</td>
+										<td class="text-center">交互</td>
+										<td class="text-center">备注备注备注备注备注备注</td>
+										<td class="text-center">已结束</td>
+										<td class="text-center">
+											<a href="javascript:;" class="text-primary activityBlockEdit"><i class="fa fa-eye"></i>&nbsp;查看</a>
+											<a href="javascript:;" class="text-primary del"><i class="fa fa-remove"></i>&nbsp;删除</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="clearfix">
+							<div class="paginglist pull-right">
+								<div>共<i class="text-warning"> 123 </i>条记录</div>
+								<strong>上一页</strong> <span><small>1</small><em>/</em><small>2</small></span> <strong>下一页</strong> <input type="text" />
+								<div>跳转</div>
+							</div>
+						</div>
+					</div>
+					<div class="tabMain">
+						
+					</div>
+					<div class="tabMain">
+						
+					</div>
+					<div class="tabMain">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../../js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/root.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				//查看活动
+				$('body').on('click', '.activityBlockEdit', function() {
+					layer.open({
+						type: 2,
+						title: '活动详情',
+						content: './activityMsgDetails.html',
+						area: ['100%', '100%'],
+						success: function(layero, index) {
+
+						}
+					}) //layer end
+				})
+
+				$('.del').click(function() {
+					layer.confirm('确认要删除此活动？', {
+						btn: ['确认', '取消'],
+					})
+				})
+				
+
+			})
+		</script>
+	</body>
+
+</html>

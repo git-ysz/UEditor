@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>活动分发统计</title>
+		<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+	</head>
+
+	<body>
+		<div class="w">
+			<div class="tabGroup">
+				<div class="tabTitle clearfix"><span class="tabli onTab">活动统计</span></div>
+				<div class="tabBody">
+					<div class="tabMain onMain">
+						<div class="clearfix m-b">
+							<input class="inputFxheight pull-left mr-r5" placeholder="请输入关键字" type="text">
+							<input class="inputFxheight pull-left mr-r5" placeholder="作者名称" type="text">
+							<button class="btn btn-fx btn-sure pull-left mr-r5"><i class="fa fa-fw fa-search"></i>搜索</button>
+						</div>
+						<div class="activity-line">
+							<div class="row" style="overflow-y: auto;max-height: 180px;">
+								<div class="col-sm-3">
+									<div class="file cur box-shadow mr-r0 active">
+										<div class="p-xs">
+											活动1 
+											<div class="pull-right border-bottom">
+												<span>活动参与人数：1235</span>，<span>浏览总人数：1235</span>
+											</div>
+											<br>
+											<small>作者：王二麻子</small><br />
+											<small>活动时间：2014-10-13 - 2014-10-14</small><br />
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="file cur box-shadow mr-r0">
+										<div class="p-xs">
+											活动2
+											<div class="pull-right border-bottom">
+												<span>活动参与人数：1235</span>，<span>浏览总人数：1235</span>
+											</div>
+											<br>
+											<small>作者：王二麻子</small><br />
+											<small>活动时间：2014-10-13 - 2014-10-14</small><br />
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="file cur box-shadow mr-r0">
+										<div class="p-xs">
+											活动2
+											<div class="pull-right border-bottom">
+												<span>活动参与人数：1235</span>，<span>浏览总人数：1235</span>
+											</div>
+											<br>
+											<small>作者：王二麻子</small><br />
+											<small>活动时间：2014-10-13 - 2014-10-14</small><br />
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="file cur box-shadow mr-r0">
+										<div class="p-xs">
+											活动2
+											<div class="pull-right border-bottom">
+												<span>活动参与人数：1235</span>，<span>浏览总人数：1235</span>
+											</div>
+											<br>
+											<small>作者：王二麻子</small><br />
+											<small>活动时间：2014-10-13 - 2014-10-14</small><br />
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="countEcharts m-t-lg">
+							<!--<ul class="other clearfix text-left">
+								<li>
+									<h5>参与人总数</h5>
+									<div class="num">
+										<span class="text-primary">15345</span>人
+									</div>
+								</li>
+								<li>
+									<h5>浏览总次数</h5>
+									<div class="num">
+										<span class="text-danger">155234</span>次
+									</div>
+								</li>
+							</ul>-->
+							<div class="lineEchart fl" id="countEchart"></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<script src="../../js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/root.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../plugins/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('body').on('click', '.activity-line .file', function() {
+					if(!$(this).hasClass('active')) {
+						$(this).addClass('active').parent().siblings().find('.file').removeClass('active')
+					}
+				})
+				// 基于准备好的dom，初始化echarts实例
+				var main_1 = echarts.init(document.getElementById('countEchart'))
+				var option1 = {
+					title: {
+						text: '活动参与人数柱状图 ',
+						left: 'center'
+					},
+					tooltip: {
+						trigger: 'axis'
+					},
+					toolbox: {
+						feature: {
+							saveAsImage: {}
+						}
+					},
+					xAxis: {
+						type: 'category',
+						boundaryGap: true,
+						data: [
+							'0-100次', '100-200次', '200-500次', '500-1000次', '1000-2000次', '2000-5000次'
+						]
+					},
+					yAxis: {
+						type: 'value'
+					},
+					series: [{
+						name: '参与人数',
+						type: 'line',
+						smooth: true,
+						symbolSize: 15,
+						label: {
+							normal: {
+								show: true,
+								position: 'top'
+							}
+						},
+						itemStyle: {
+							normal: {
+								color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+										offset: 0,
+										color: '#83bff6'
+									},
+									{
+										offset: 0.5,
+										color: '#188df0'
+									},
+									{
+										offset: 1,
+										color: '#188df0'
+									}
+								])
+							}
+						},
+						data: [656,595,420,350,280,100],
+						markPoint: {
+							data: [{
+									type: 'max',
+									name: '最大值'
+								},
+								{
+									type: 'min',
+									name: '最小值'
+								}
+							]
+						}
+					}]
+				}
+				main_1.setOption(option1)
+
+			})
+		</script>
+	</body>
+
+</html>

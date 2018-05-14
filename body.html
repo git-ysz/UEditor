@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<title></title>
+		<style type="text/css">
+			body,
+			html {
+				background: #f0f3f4;
+			}
+			
+			.user-msg {
+				background-image: url(images/ec.png);
+				background-repeat: no-repeat;
+				background-size: 60% auto;
+				background-position: right bottom;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="w">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="ibox mr-b0">
+						<div class="ibox-title">
+							<h5>用户信息</h5>
+						</div>
+					</div>
+					<div class="ibox no-top-border clearfix">
+						<div class="ibox-content col-sm-12 height_180">
+							<div class="user-info">
+								<div class="user-photo col-sm-4"><img width="100%" src="images/a8.jpg" class="img-circle" /></div>
+								<div class="user-info-r text-left col-sm-8 fontsize_14">
+									<h2 class="fontsize_18">上海驭箭信息科技有限公司</h2>
+									<hr />
+									<p class="m-t-lg">联系方式：021-62360319</p>
+									<p class="m-t-xxs">地址：上海区闵行区159号莲花大厦1602室</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-8">
+					<div class="ibox mr-b0">
+						<div class="ibox-title">
+							<h5>账户信息</h5>
+						</div>
+					</div>
+					<div class="ibox no-top-border">
+						<div class="ibox-content text-center user-msg height_180">
+							<div class="row" style="padding-top: 20px;">
+								<div class="col-sm-2">
+									<img src="images/money.svg" width="100px" style="" />
+								</div>
+								<div class="col-sm-7">
+									<div class="col-sm-12 m-b-sm m-t-sm">
+										<div class="row">
+											<div class="col-xs-6 text-left" style="line-height: 24px;padding-top: 15px;width: 280px;">
+												<span class="fl m-r-md"> 账户余额 </span>
+												<h3 class="font-bold fr no-margins">¥ 4,232</h3>
+											</div>
+											<div class="col-xs-4 text-left" style="padding-top: 15px;">
+												<a href="javascript:;" class="text-primary m-t">提现</a> 丨
+												<a onclick="window.location.href = './components/account/accountAddMoney.html';" href="javascript:;" class="text-primary">充值</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="row">
+											<div class="col-xs-6 text-left" style="line-height: 24px;padding-top: 15px;width: 280px;">
+												<span class="fl m-r-md"> 账户年总支出 </span>
+												<h3 class="font-bold fr no-margins">¥ 5,164,232</h3>
+											</div>
+											<div class="col-xs-4 text-left" style="padding-top: 15px;">
+												<a onclick="window.location.href = './components/account/accountAddMoney.html';" href="javascript:;" class="text-primary">查看详情</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-9">
+					<div class="ibox mr-b0 m-t">
+						<div class="ibox-title">
+							<h5>最新活动详情</h5>
+						</div>
+					</div>
+					<div class="ibox no-top-border">
+						<div class="ibox-content">
+							<div class="row">
+								<div class="col-sm-3 height_600">
+									<div class="text-left m-t">
+										<div class="ibox-content col-sm-12">
+											<div class="" style="position: relative;width: 100%;">
+												<div class="text-left fontsize_14">
+													<h5 class="fontsize_18">大麦全国线上销售广告</h5>
+													<hr />
+													<p class="m-t-lg">作者：<span class="pull-right">王小二</span></p>
+													<p class="m-t-xxs">创建时间：<span class="pull-right">2018-05-01</span></p>
+													<p class="m-t-xxs">活动时间：<span class="pull-right">2018-05-01 - 2018-05-02</span></p>
+													<p class="m-t-xxs">活动详情：</p>
+													<p class="m-t-xxs pull-right">&emsp;&emsp;在全部范围内展开针对新品大麦X6的线上广告活动，提升用户对于X6的更深入的理解促进销售与品牌建设</p>
+												</div>
+												<img src="upload/18041702a94d59ac56b5417812c0dabeffa391.jpeg" width="100%" style="max-height: 100%;" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="activityEchars" class="col-sm-9 height_600"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-sm-3">
+					<!--在线活动-->
+					<div class="ibox mr-b0 m-t">
+						<div class="ibox-title">
+							<h5>全部在线活动</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="ibox no-top-border">
+								<div class="ibox-content">
+									<div class="row height_600" style="overflow-y: auto;">
+
+										<div class="col-sm-12">
+											<div class="file box-shadow">
+												<span class="corner"></span>
+												<div class="image cur filePreview">
+													<img alt="image" class="img-responsive" src="upload/180417c6f9a6528ef3ed5bb580c9f75490a4e8.jpeg">
+												</div>
+												<div class="file-name">
+													X7销售活动
+													<br>
+													<small>作者：王二麻子</small><br />
+													<small>添加时间：2014-10-13 22:22:22</small><br />
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12">
+											<div class="file box-shadow">
+												<span class="corner"></span>
+												<div class="image cur filePreview">
+													<img alt="image" class="img-responsive" src="upload/1804179ce294acf91b35956b9091f19ad44c30.jpeg">
+												</div>
+												<div class="file-name">
+													X6试驾活动
+													<br>
+													<small>作者：李兵</small><br />
+													<small>添加时间：2014-10-13 22:22:22</small><br />
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12">
+											<div class="file box-shadow">
+												<span class="corner"></span>
+												<div class="image cur filePreview">
+													<img alt="image" class="img-responsive" src="upload/180417c6f9a6528ef3ed5bb580c9f75490a4e8.jpeg">
+												</div>
+												<div class="file-name">
+													福特试乘活动
+													<br>
+													<small>作者：王升</small><br />
+													<small>添加时间：2014-10-13 22:22:22</small><br />
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12">
+											<div class="file box-shadow">
+												<span class="corner"></span>
+												<div class="image cur filePreview">
+													<img alt="image" class="img-responsive" src="upload/1804179f0ab378100530267de3aa75f238b62a.png">
+												</div>
+												<div class="file-name">
+													宝马X5试驾活动
+													<br>
+													<small>作者：莉莉</small><br />
+													<small>添加时间：2014-10-13 22:22:22</small><br />
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugins/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/root.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.preview').click(function() {
+					window.location.href = 'components/activity/activityView.html'
+				})
+				$('.edit').click(function() {
+					window.location.href = 'components/activity/activityMsg.html'
+				})
+				//查看活动
+				$('body').on('click', '.filePreview', function() {
+					layer.open({
+						type: 2,
+						title: '活动详情',
+						content: './components/activity/activityMsgDetails.html',
+						area: ['100%', '100%'],
+						success: function(layero, index) {
+
+						}
+					}) //layer end
+				})
+
+				//				视图
+				var data = [Math.round(Math.random() * 300)]
+				var dataT = [Math.round(Math.random() * 300) + 300]
+				var dataM = []
+				// 获取某一时段到另一时段的小时数，Date.parse(new Date().format()) 为当前时间戳
+				for(var i = Date.parse('2018-05-01'); i <= Date.parse(new Date().format(true)); i += 3600000) {
+					dataM.push(new Date(i).format(true))
+				}
+				// 制造虚拟数据
+				for(var i = 1; i < dataM.length; i++) {
+					data.push(Math.round((Math.random()) * 20 + data[i - 1])) //参与人数
+					dataT.push(data[i] + Math.round(Math.random() * 1000)) //浏览总人数
+				}
+				// 基于准备好的dom，初始化echarts实例
+				var main_1 = echarts.init(document.getElementById('activityEchars'))
+				var option1 = {
+					title: {
+						text: '活动参与人数分析',
+						left: 'center'
+					},
+					tooltip: {
+						trigger: 'axis'
+					},
+					legend: {
+						top: 0,
+						left: 0,
+						data: ["参与人数", "浏览总数"]
+					},
+					toolbox: {
+						feature: {
+							saveAsImage: {}
+						}
+					},
+					dataZoom: [{
+						type: 'inside',
+						start: 95,
+						end: 100
+					}, {
+						start: 0,
+						end: 100,
+						handleSize: '80%',
+					}],
+					xAxis: {
+						type: 'category',
+						boundaryGap: false,
+						data: dataM,
+					},
+					yAxis: {
+						type: 'value'
+					},
+					series: [{
+							name: '参与人数',
+							type: 'line',
+							smooth: true,
+							symbolSize: 15,
+							label: {
+								normal: {
+									show: true,
+									position: 'top'
+								}
+							},
+							data: data,
+							markLine: {
+								data: [{
+									type: 'average',
+									name: '平均值'
+								}]
+							},
+							markPoint: {
+								data: [{
+										type: 'max',
+										name: '最大值'
+									},
+									{
+										type: 'min',
+										name: '最小值'
+									}
+								]
+							}
+						},
+						{
+							name: '浏览总数',
+							type: 'line',
+							smooth: true,
+							symbolSize: 12,
+							label: {
+								normal: {
+									show: true,
+									position: 'bottom'
+								}
+							},
+							data: dataT,
+							markLine: {
+								data: [{
+									type: 'average',
+									name: '平均值'
+								}]
+							},
+							markPoint: {
+								data: [{
+										type: 'max',
+										name: '最大值'
+									},
+									{
+										type: 'min',
+										name: '最小值'
+									}
+								]
+							}
+						},
+					]
+				}
+				main_1.setOption(option1)
+
+			})
+		</script>
+	</body>
+
+</html>

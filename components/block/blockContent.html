@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>区块内容</title>
+		<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+	</head>
+
+	<body>
+		<div class="w">
+			<div class="row animated fadeInRight">
+				<div class="col-sm-4" style="position: fixed;">
+					<div class="ibox float-e-margins">
+						<div class="ibox-title">
+							<h5>区块内容</h5>
+						</div>
+						<div>
+							<div class="ibox-content no-padding border-left-right text-center">
+								<img alt="image" class="img-preview-fx" src="../../upload/open-no.png">
+							</div>
+							<div class="ibox-content profile-content">
+								<h4 class="m-b"><strong>区块标题</strong></h4>
+								<h5>区块描述</h5>
+								<p>区块描述区块描述区块描述区块描述区块描述区块描述区块描述区块描述区块描述区块描述区块描述区块描述区块描述区块描述</p>
+								<div class="row clearfix">
+									<div class="col-sm-6 pull-left">
+										<h5>创建时间</h5>
+										<p>2018-02-02 12:22:23</p>
+									</div>
+									<div class="col-sm-6 pull-right">
+										<h5>作者</h5>
+										<p>不吃鱼的耗子</p>
+									</div>
+								</div>
+								<div class="user-button">
+									<div class="row">
+										<div class="col-sm-12">
+											<button type="button" class="btn btn-cancel btn-fx btn-block" onclick="window.history.go(-1)"><i class="fa fa-arrow-circle-left"></i> 返回</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-8 pull-right">
+					<pre lay-title='区块代码' class="layui-code" style="margin-top: 0;max-height: 800px;overflow-y: auto;">
+						<!--代码内容-->
+					</pre>
+				</div>
+			</div>
+		</div>
+
+		<script src="../../js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/root.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$.ajax({
+					type:"get",
+					url:"../subblock/ContentHongBao.html",
+					async:true,
+					success: function(str){
+						$('pre').text(str)
+					}
+				})
+				
+
+			})
+		</script>
+	</body>
+
+</html>

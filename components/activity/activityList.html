@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+	</head>
+	<body>
+		<div class="w">
+				<div class="tabBody">
+					<div class="tabMain onMain">
+						<!--列表详情-->
+						<div class="form-inline clearfix mr-b10">
+							<div class="clearfix">
+								<div class="pull-left clearfix">
+									<input class="inputFxheight pull-left mr-r5" placeholder="请输入关键字" type="text">
+									<button class="btn btn-fx btn-sure pull-left"><i class="fa fa-fw fa-search"></i>搜索</button>
+								</div>
+								<div class="paginglist pull-right">
+									<div>共<i class="text-warning"> 123 </i>条记录</div>
+									<strong>上一页</strong> <span><small>1</small><em>/</em><small>2</small></span> <strong>下一页</strong> <input type="text" />
+									<div>跳转</div>
+								</div>
+							</div>
+						</div>
+						<div class="mr-b10">
+							<table class="table table-bordered table-default table-hover">
+								<colgroup>
+							    <col width="20%">
+							    <col width="20%">
+							    <col width="20%">
+							    <col width="20%">
+							    <col width="20%">
+							  </colgroup>
+								<thead>
+									<tr>
+										<th class="text-center">创建时间</th>
+										<th class="text-center">活动标题</th>
+										<th class="text-center">作者</th>
+										<th class="text-center">备注</th>
+										<th class="text-center">选中</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="text-center">2018-05-01</td>
+										<td class="text-center">活动标题</td>
+										<td class="text-center">三毛</td>
+										<td class="text-center">备注备注备注备注备注</td>
+										<td class="text-center">
+											<label for="">
+                        <input class="cur" type="checkbox" style="position: relative; top: 3px;">
+												<i class="fa fa-user"></i>
+											</label>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center">2018-05-01</td>
+										<td class="text-center">活动标题</td>
+										<td class="text-center">三毛</td>
+										<td class="text-center">备注备注备注备注备注</td>
+										<td class="text-center">
+											<label for="">
+                        <input class="cur" type="checkbox" style="position: relative; top: 3px;">
+												<i class="fa fa-user"></i>
+											</label>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="clearfix">
+							<div class="pull-right">
+								<button class="btn btn-fx btn-sure addSure">确定</button>
+							</div>
+						</div>
+					</div>
+				</div>
+		
+		
+		
+
+		<script src="../../js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../plugins/jquery.qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/root.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.addSure').click(function(){
+					var num = 0
+					for (var i = 0; i < $('input[type="checkbox"]').length; i++) {
+						if ($('input[type="checkbox"]')[i].checked) {
+							num ++
+						}
+					}
+					if (num > 1) {
+						var layerIndex = layer.msg('只可以选择一个活动！')
+						layer.style(layerIndex,{
+							'text-align': 'center',
+						})
+						return false;
+					}
+					if (num == 0) {
+						var layerIndex = layer.msg('请选择活动后确定')
+						layer.style(layerIndex,{
+							'text-align': 'center',
+						})
+						return false;
+					}
+					var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+					parent.layer.close(index); //再执行关闭 
+				})
+				
+				
+			})
+		</script>
+	</body>
+
+</html>

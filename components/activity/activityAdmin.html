@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>活动管理</title>
+		<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+	</head>
+	<body>
+		<div class="w">
+			<div class="tabGroup">
+				<div class="tabTitle clearfix"><span class="tabli onTab">活动管理</span></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="ibox float-e-margins">
+						<div class="ibox-content min-h-700">
+							<div class="file-manager">
+								<h5>显示：</h5>
+								<a href="javascript:;" class="file-control active">所有</a>
+								<a href="javascript:;" class="file-control">频道</a>
+								<a href="javascript:;" class="file-control">活动</a>
+								<div class="hr-line-dashed"></div>
+								<button class="btn btn-fx btn-sure btn-block" id="addActivity"><i class="fa fa-plus"></i>&nbsp;添加活动</button>
+								<div class="hr-line-dashed"></div>
+								<h5>目录</h5>
+								<ul class="folder-list">
+									<li>
+										<a href="javascript:;"><i class="fa fa-plus"></i>&nbsp;频道</a>
+										<ul class="folder-list mr-l20">
+											<li>
+												<a href="javascript:;"><i class="fa fa-plus"></i>&nbsp;频道1</a>
+												<ul class="folder-list mr-l20">
+													<li>
+														<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;分类1</a>
+													</li>
+													<li>
+														<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;分类2</a>
+													</li>
+													<li>
+														<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;分类3</a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<a href="javascript:;"><i class="fa fa-plus"></i>&nbsp;频道2</a>
+												<ul class="folder-list mr-l20">
+													<li>
+														<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;分类1</a>
+													</li>
+													<li>
+														<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;分类2</a>
+													</li>
+													<li>
+														<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;分类3</a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<a href="javascript:;"><i class="fa fa-plus"></i>&nbsp;频道3</a>
+												<ul class="folder-list mr-l20">
+													<li>
+														<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;分类1</a>
+													</li>
+													<li>
+														<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;分类2</a>
+													</li>
+													<li>
+														<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;分类3</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="javascript:;"><i class="fa fa-plus"></i>&nbsp;活动</a>
+										<ul class="folder-list mr-l20">
+											<li>
+												<a href="javascript:;"><i class="fa fa-plus"></i>&nbsp;模板类型</a>
+												<ul class="folder-list mr-l20">
+													<li>
+														<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;类型1</a>
+													</li>
+													<li>
+														<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;类型2</a>
+													</li>
+													<li>
+														<a href="javascript:;"><i class="fa fa-cube"></i>&nbsp;类型3</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									
+								</ul>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="ibox">
+								<div class="ibox-content no-borders">
+									<h4 class="m-b m-t"><strong>活动/区块显示：</strong></h4>
+									<ol class="breadcrumb m-b">
+									  <li class="text-primary"><a href="#">活动管理</a></li>
+									  <li class="text-primary"><a href="#">活动模板</a></li>
+									  <li class="active">模板1</li>
+									</ol>
+									<hr />
+									<div class="input-group">
+										<input class="inputFxheight pull-left mr-r5" placeholder="请输入关键字" type="text">
+										<select class="inputFxheight pull-left mr-r5">
+											<option>--区块类型--</option>
+											<option>类型1</option>
+											<option>类型2</option>
+											<option>类型3</option>
+										</select>
+										<select class="inputFxheight pull-left mr-r5">
+											<option>--区块类型--</option>
+											<option>类型1</option>
+											<option>类型2</option>
+											<option>类型3</option>
+										</select>
+										<button class="btn btn-fx btn-sure pull-left mr-r5"><i class="fa fa-fw fa-search"></i>搜索</button>
+										<button class="btn btn-fx btn-sure addBlock"><i class="fa fa-html5"></i>&nbsp;添加区块</button><small>(活动列表添加区块按钮，需要按需显示隐藏，此段文字后续删除)</small>
+									</div>
+									<div class="clients-list">
+										<div class="tab-content">
+											<div class="tab-pane active" style="overflow-y: auto;height: 534px;">
+												<table class="table-default table table-striped table-hover">
+													<colgroup>
+														<col width="15%">
+														<col width="15%">
+														<col width="40%">
+														<col width="15%">
+														<col width="15%">
+													</colgroup>
+													<tbody class="text-center">
+														<tr>
+															<td class="client-avatar"><i class="fa fa-cubes"></i></td>
+															<td>活动标题</td>
+															<td class="text-left">活动描述活动描述活动描述活动描述活动描述活动描述活动描述活动描述</td>
+															<td>活动类型</td>
+															<td class="client-status">
+																<button class="label label-primary no-borders">填充区块</button>
+															</td>
+														</tr>
+														<tr>
+															<td class="client-avatar"><i class="fa fa-cubes"></i></td>
+															<td>活动标题</td>
+															<td class="text-left">活动描述活动描述活动描述活动描述活动描述活动描述活动描述活动描述</td>
+															<td>活动类型</td>
+															<td class="client-status">
+																<button class="label label-primary no-borders">填充区块</button>
+															</td>
+														</tr>
+														<tr>
+															<td class="client-avatar"><i class="fa fa-cubes"></i></td>
+															<td>活动标题</td>
+															<td class="text-left">活动描述活动描述活动描述活动描述活动描述活动描述活动描述活动描述</td>
+															<td>活动类型</td>
+															<td class="client-status">
+																<button class="label label-primary no-borders">填充区块</button>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script src="../../js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/root.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('body').on('click','.remove',function(){
+					layer.confirm('您确定要移除此区块么？')
+				})
+				//添加活动
+				$('#addActivity').click(function() {
+					layer.open({
+						type: 2,
+						title: '添加活动',
+						closeBtn: false,
+						content: './activityAdd.html',
+						area: ['100%', '100%'],
+						success: function() {
+							
+						}
+					})
+				})
+				//添加区块
+				$('body').on('click','.addBlock',function(){
+					layer.open({
+						type: 2,
+						title: false,
+						closeBtn: false,
+						content: './activityEdit.html',
+						area: ['100%','100%'],
+						success: function(layero,index){
+							
+						}
+					})
+				})
+				$('body').on('click','.checkDetail',function(){
+					layer.open({
+						type: 2,
+						title: '编辑活动',
+						closeBtn: false,
+						content: './activityAdd.html',
+						area: ['100%', '100%'],
+						success: function() {
+							
+						}
+					})
+				})
+				
+			})
+		</script>
+	</body>
+
+</html>

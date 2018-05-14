@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div class="w">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-1 control-label">活动名称：</label>
+					<div class="col-sm-5">
+						<input type="text" placeholder="请输入活动名称" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-1 control-label">活动海报：</label>
+					<div class="col-sm-5" style="">
+						<div class="layui-upload">
+						  <div class="layui-upload-list fl" style="margin: 0;">
+						    <img src="../../images/posterImg.png" class="layui-upload-img" id="uploadImg" height="100%" style="border: 1px solid #f4f4f4;height: 100px;width: 100px;" />
+						  </div>
+						  <button type="button" class="btn btn-fx btn-sure fl" id="upload" style="position: absolute;bottom: 30px;left: 130px;"><i class="fa fa-upload"></i> 上传图片</button>
+							<small style="position: absolute;bottom: 0;left: 130px;">温馨提示：图片尺寸建议为：400*400，图片小于3M</small>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-1 control-label">活动时间：</label>
+					<div class="col-sm-5" style="padding: 0;">
+						<div class="col-sm-6"><input type="text" class="form-control startTime" placeholder="请输入起始时间" /></div>
+						<div class="col-sm-6"><input type="text" class="form-control endTime" placeholder="请输入结束时间" /></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-1 control-label">所属频道：</label>
+					<div class="col-sm-5" style="padding: 0;">
+						<div class="col-sm-6">
+							<select class="form-control" name="">
+								<option>频道选择</option>
+								<option>频道 1</option>
+								<option>频道 2</option>
+								<option>频道 3</option>
+								<option>频道 4</option>
+							</select>
+						</div>
+						<div class="col-sm-6">
+							<select class="form-control" name="">
+								<option>频道选择</option>
+								<option>类型 1</option>
+								<option>类型 2</option>
+								<option>类型 3</option>
+								<option>类型 4</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-1 control-label">模板选择：</label>
+					<div class="col-sm-5">
+						<select class="form-control" name="">
+							<option>请选择活动模板</option>
+							<option>选项 1</option>
+							<option>选项 2</option>
+							<option>选项 3</option>
+							<option>选项 4</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-1 control-label">活动类型：</label>
+					<div class="col-sm-5">
+						<select class="form-control" name="">
+							<option>请选择活动类型</option>
+							<option>选项 1</option>
+							<option>选项 2</option>
+							<option>选项 3</option>
+						</select>
+					</div>
+				</div>
+				<!--<div class="form-group">
+					<label class="col-sm-1 control-label">选择区块内容：</label>
+					<div class="col-sm-5">
+						<button class="btn btn-fx btn-sure btn-block addBlock" type="button"><i class="fa fa-plus"></i> 编辑区块</button>
+					</div>
+				</div>-->
+				<div class="form-group">
+					<label class="col-sm-1 control-label">备注：</label>
+					<div class="col-sm-5">
+						<textarea placeholder="请输入备注信息" class="form-control"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-1 col-sm-5">
+						<button class="btn btn-fx btn-danger pull-right cancelAdd" type="button">取消</button>
+						<button class="btn btn-fx btn-sure pull-right saveAdd m-r-sm" type="button">确定</button>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+		<script src="../../js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/root.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				$('.cancelAdd').on('click', function() {
+					var index = parent.layer.getFrameIndex(window.name) //先得到当前iframe层的索引
+					parent.layer.close(index) //执行关闭
+				})
+				$('.saveAdd').on('click', function() {
+					layer.msg('保存成功',{
+						time: 1000
+					},function(){
+						var index = parent.layer.getFrameIndex(window.name) //先得到当前iframe层的索引
+						parent.layer.close(index) //执行关闭						
+					})
+				})
+				$('.addBlock').click(function(){ //活动添加区块
+					layer.open({
+						type: 2,
+						title: false,
+						closeBtn: false,
+						content: './activityEdit.html',
+						area: ['100%','100%'],
+						success: function(layero,index){
+								
+						}
+					})
+				})
+				//图片上传
+				layui.use(['upload'], function() {
+					var upload = layui.upload
+				  var uploadInst = upload.render({
+				    elem: '#upload',
+				    url: '/upload/',
+				    before: function(obj){
+				      //预读本地文件示例，不支持ie8
+				      obj.preview(function(index, file, result){
+				        $('#uploadImg').attr('src', result); //图片链接（base64）
+				      })
+				    },
+				    done: function(res){
+				      //如果上传失败
+				      if(res.code > 0){
+				        return layer.msg('上传失败')
+				      }
+				      //上传成功
+				    },
+				    error: function(err){
+				      //console.log(err)
+				    }
+				  })
+			  })
+			})
+		</script>
+	</body>
+
+</html>

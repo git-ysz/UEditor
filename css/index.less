@@ -1,0 +1,528 @@
+@import './reset.css'; //样式重置
+@import '../bootstrap/css/bootstrap.min.css'; //bootstrap核心包
+@import '../bootstrap/css/font-awesome.min.css'; //字体
+@import './style.css'; //后台UI样式表
+@import './root.css'; //基于bootstrap二次开发的组件
+/*不要更改顺序*/
+
+body,html {
+    font-size: 12px;
+    color: #333333;
+}
+//框架内容器
+.w {
+    padding: 20px;
+}
+.mr_auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//修改root样式
+.form-control {
+    font-size: 12px;
+}
+.tabGroup .tabBody .tabMain {
+    padding: 0px;
+}
+.tabGroup .tabBody {
+    border: none;
+}
+.tabGroup .tabTitle {
+    margin-bottom: 15px;
+}
+.checkbox input[type=checkbox] {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: -3px;
+}
+.line-btn {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    width: 85%;
+}
+.line-btn:focus {
+    border-color: #0078E4 !important;
+}
+//.img-responsive {
+//  width: 85px;
+//}
+.file img.img-responsive{
+    height: 100%;
+    margin: 0 auto;
+}
+.ibox-content {
+    border-top: 0;
+}
+//滚动条样式
+.zUIpanelScrollBox,
+.zUIpanelScrollBar {
+    width: 10px;
+    top: 4px;
+    right: 2px !important;
+    border-radius: 5px;
+}
+
+.zUIpanelScrollBox {
+    background: black;
+    opacity: 0.3;
+    filter: alpha(opacity=10);
+}
+
+.zUIpanelScrollBar {
+    background: rgb(222, 222, 222);
+    opacity: 1;
+    filter: alpha(opacity=80);
+}
+
+//顶部导航栏
+header {
+    width: 100%;
+    height: 50px;
+    background: #333333;
+    padding: 0 15px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    h1 {
+        display: block;
+        height: 50px;
+        font-size: 16px;
+        line-height: 55px;
+        cursor: pointer;
+    }
+    i.logo {
+        display: inline-block;
+        background: url(../images/logo.png) no-repeat;
+        background-size: 100%;
+        background-position: center;
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+    }
+    .login {
+        height: 50px;
+        line-height: 50px;
+        >div {
+            cursor: pointer;
+        }
+        >div:hover {
+            color: #00aefb;
+            transition: color .3s linear;
+        }
+        .setBtn {
+            margin: 0 15px;
+        }
+    }
+}
+//侧边栏
+aside {
+    position: fixed;
+    width: 200px;
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    background: #333744;
+    color: #FFFFFF;
+    line-height: 40px;
+    overflow-y: auto;
+    #faMenu{        
+        opacity: 0;
+        pointer-events: none;
+    }
+    .asideTitle {
+        font-size: 14px;
+        height: 40px;
+        width: 100%;
+        cursor: pointer;
+        padding-left: 20px;
+        box-sizing: border-box;
+        background: #3b4152;
+        i.fa {
+            width: 25px;
+        }
+    }
+    .asideTitle:hover,.asideTitle.active {
+        background-color: #009ee4;
+        transition: background-color .2s linear;
+    }
+    .sonMenu {
+        display: none;
+        li {
+            cursor: pointer;
+            width: 100%;
+            height: 40px;
+            box-sizing: border-box;
+            padding-left: 15px;
+            border-left: 5px solid rgba(0,0,0,0);
+            background: #282b37;
+            i.fa {
+                margin-right: 15px;
+            }
+        }
+        li.active {
+            color: #009ee4;
+            border-color: #008ecd;
+            background: #FFFFFF;
+        }
+        li:hover {
+            background: #42485b;
+            border-color: #008ecd;
+            transition: all .2s linear;
+        }
+    }
+    .asideTitle.active+.sonMenu { //选择器有兼容性，已用js操作
+        display: block;
+    }
+}
+//主体容器
+.main {
+    position: absolute;
+    overflow: hidden;
+    top: 50px;
+    bottom: 0;
+    right: 0;
+    left: 200px;
+}
+//返回首页
+.gohome {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    a:hover {
+        opacity: 1;
+    }
+    a {
+        height: 38px;
+        width: 38px;
+        display: block;
+        background: #2f4050;
+        padding: 9px 8px;
+        text-align: center;
+        color: #fff;
+        border-radius: 50%;
+        opacity: .5;
+    }
+    i {
+        font-size: 18px;
+        line-height: 20px;
+    }
+}
+/*
+ * 
+ * 以上为通用样式
+ * 以下为自定义样式 
+ * 
+ * */
+.copyright {
+    position: fixed;
+    padding-right: 10px;
+    bottom: 0px;
+    right: 0;
+    width: 100%;
+    height: 34px;
+    background: rgba(242, 242, 242, 0);
+    font-size: 11px;
+    line-height: 34px;
+    pointer-events: none;
+    a {
+        pointer-events: auto;
+        color: #0078E4;
+    }
+    span {
+        padding-left: 10px;
+        font-size: 10px;
+    }
+}
+//弹出层手机
+.phone-left {
+    float: left;
+    .phone-left-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 170px;
+        height: 160px;
+        padding: 25px;
+        box-sizing: border-box;
+        background-color: #FFFFFF;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        button {
+            display: block;
+            width: 100%;
+        }
+    }
+    .phone-left-bt {
+        width: 170px;
+        height: 288px;
+        box-sizing: border-box;
+        padding: 25px;
+        border-radius: 5px;
+        background-color: #FFFFFF;
+        .qrcode {
+            margin: 10px auto 10px;
+            width: 120px;
+            height: 120px;
+            pointer-events: none;
+        }
+        button {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+.phone-right {
+    float: right;
+    width: 378px;
+    height: 772px;
+    padding: 95px 25px 0;
+    box-sizing: border-box;
+    .phone-right-title {
+        height: 40px;
+        background: #21292c;
+        padding: 0 12px;
+        color: #fff;
+        line-height: 40px;
+    }
+    .preview-scroll {
+        height: 540px;
+        width: auto;
+        display: block;
+        background: #FFFFFF;
+    }
+    .phone-right-content {
+        width: 100%;
+        height: 100%;
+        iframe {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+    }
+}
+.min-h-700 {
+    min-height: 700px;
+}
+
+.clearfix:after{
+    content:"";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.clearfix{
+    zoom:1;
+}
+.text-b-border {
+    text-decoration: underline;
+}
+//蓝色字体
+.lanse {
+    color: #01AAED;
+    padding: 5px 0;
+}
+//灰色字体
+.hui {
+    color: #333333;
+    font-size: 12px;
+    padding: 5px 0;
+}
+.box-shadow.file:hover {
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,.1);
+    transition: box-shadow .3s linear;
+}
+//layer弹出层手机主题
+body .ph1 {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none !important;
+    background-image: url(../images/47.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+    width: 650px !important;
+    height: 772px;
+    /*width: 378px !important;*/
+   .layui-layer-content {
+       height: 772px !important;
+       overflow: hidden;
+   }
+}
+
+body .ph2 {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none !important;
+    background-image: url(../images/50.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+    width: 677px !important;
+    height: 788px;
+    /*width: 407px !important;*/
+   .layui-layer-content {
+       height: 788px !important;
+       overflow: hidden;
+   }
+}
+
+body .ph3 {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none !important;
+    background-image: url(../images/51.png);
+    background-position: right top;
+    background-size: 408px;
+    background-repeat: no-repeat;
+    width: 680px !important;
+    height: 826px;
+    /*width: 408px !important;*/
+   .layui-layer-content {
+       height: 826px !important;
+       overflow: hidden;
+   }
+}
+//弹出层主题
+body .lan .layui-layer-title {
+    background-image: linear-gradient(135deg, #2fa9e6, #4dc0f9);
+    border-bottom: 0px;
+    color: #FFFFFF;
+}
+//统计分析-活动统计
+.countEcharts {
+    .other {
+        margin-bottom: 15px;
+        padding: 0px;
+        border-radius: 3px;
+        float: left;
+        border: 1px solid #ddd;
+        width: 100%;
+        >li {
+            list-style: none;
+            padding-left: 50px;
+            margin-bottom: 10px;
+            float: left;
+            width: 50%;
+            >h5 {
+                display: block;
+                padding: 5px;
+                width: 70%;
+                line-height: 30px;
+                border-bottom: 1px #ccc solid;
+                font-size: 14px;
+            }
+            >.num {
+                padding: 5px;
+                margin-top: 5px;
+                font-size: 15px;
+            }
+        }
+    }
+    div.lineEchart {
+        width: 110%;
+        margin-left: -5%;
+        height: 600px;
+    }
+    div.mapEchart {
+        height:600px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        top: 15px;
+    }
+}
+
+//活动效果预览
+//.file-box .file:hover {
+//  transform: scale3d(1.1,1.1,1.1);
+//  transition: all .3s linear;
+//}
+
+//账户充值
+.money:hover {
+    background-color: #FFFFFF !important;
+}
+.money:focus {
+    background-color: #FFFFFF !important;
+}
+.money.active {
+    border-color: #0078E4;
+    background-image: url(../images/success.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: auto 60%;
+    background-color: #FFFFFF;
+    box-shadow: none;
+}
+.layui-layer .form-group:last-child {
+    margin-bottom: 0px !important;
+}
+.file {
+    overflow: hidden;
+}
+.file-box .file-shadow {
+    position: absolute;
+    background: #333;
+    background: rgba(75,75,75,0.7);
+    width: 100%;
+    height: 100%;
+}
+.file-box .file-shadow span {
+    display: block;
+    padding: 0px;
+    margin: 0px auto;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+}
+//树形菜单编辑按钮
+.folder-list i.fa-edit,.folder-list i.fa-remove {
+    display: inline-block;
+    width: 27px;
+    cursor: pointer;
+    line-height: 27px;
+    position: absolute;
+    text-align: center;
+    margin: 0;
+    margin-left: 3px;
+}
+.folder-list i.fa-remove {
+    line-height: 25px;
+    margin-left: 30px;
+}
+button.linkAddress {
+    border: none;
+    background: #f6f8f8;
+    font-weight: 400;
+}
+input.layui-upload-file {
+    display: none;
+}
+//排序
+.ibox .sort {
+    position: absolute;
+    top: 7px;
+    right: 0;
+    height: 30px;
+    input {
+        width: 50px;
+        height: 30px;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+//视图
+.file.box-shadow.active {
+    border-color: #0098DB;
+    background-image: url(../images/success.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: auto 50%;
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style type="text/css">
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			overflow: hidden;
+		}
+		.w {
+				padding: 0;
+				margin: 0 auto;
+				max-width: 500px;
+			}
+	</style>
+	<script type="text/javascript">
+//		window.onload = function(){ //暂时无用
+//			(function(){
+//				//更改父页面框架高度
+//				var parentIframeHeight = document.querySelector('body').offsetHeight+'px'
+//				var parentIframe = window.parent.document.getElementById('iframe1')
+//				if (parentIframe) {
+//					parentIframe.style.height = parentIframeHeight
+//				}else{ //块预览时更改样式
+//					var body = document.querySelector('body')
+//					var html = document.querySelector('html')
+//					body.style.overflowY = 'auto'
+//					html.style.overflowY = 'auto'
+//				}
+//			})()
+//		}
+	</script>
+</head>
+<body>
+	<!--区块容器-->
+	<div class="w">
+		<style type="text/css">
+				@-webkit-keyframes shake {
+					0% {
+						-webkit-transform: rotate(2deg) translate3d(0, 0, 0);
+					}
+					50% {
+						-webkit-transform: rotate(-2deg) translate3d(0, 0, 0);
+					}
+					100% {
+						-webkit-transform: rotate(2deg) translate3d(0, 0, 0);
+					}
+				}
+				
+				@keyframes shake {
+					0% {
+						-webkit-transform: rotate(2deg) translate3d(0, 0, 0);
+						transform: rotate(2deg) translate3d(0, 0, 0);
+					}
+					50% {
+						-webkit-transform: rotate(-2deg) translate3d(0, 0, 0);
+						transform: rotate(-2deg) translate3d(0, 0, 0);
+					}
+					100% {
+						-webkit-transform: rotate(2deg) translate3d(0, 0, 0);
+						transform: rotate(2deg) translate3d(0, 0, 0);
+					}
+				}
+				
+				@-webkit-keyframes open {
+					0% {
+						-webkit-transform: scale(1);
+						transform: scale(1);
+					}
+					100% {
+						-webkit-transform: scale(0.9);
+						transform: scale(0.9);
+					}
+				}
+				
+				@keyframes open {
+					0% {
+						-webkit-transform: scale(1);
+						transform: scale(1);
+					}
+					100% {
+						-webkit-transform: scale(0.9);
+						transform: scale(0.9);
+					}
+				}
+				
+				@-webkit-keyframes openBack {
+					0 {
+						-webkit-transform: rotateX(-180deg);
+						transform: rotateX(-180deg);
+					}
+					50% {
+						-webkit-transform: rotateX(-90deg);
+						transform: rotateX(-90deg);
+					}
+					100% {
+						-webkit-transform: rotateX(0deg);
+						transform: rotateX(0deg);
+					}
+				}
+				
+				@keyframes openBack {
+					0 {
+						-webkit-transform: rotateX(-180deg);
+						transform: rotateX(-180deg);
+					}
+					50% {
+						-webkit-transform: rotateX(-90deg);
+						transform: rotateX(-90deg);
+					}
+					100% {
+						-webkit-transform: rotateX(0deg);
+						transform: rotateX(0deg);
+					}
+				}
+				
+				.hongbao {
+					width: 300px;
+					height: 453.33px;
+					position: relative;
+					top: 0;
+					left: 50%;
+					margin-left: -150px;
+					overflow: hidden;
+					background-image: url(../../upload/open-no.png);
+					background-repeat: no-repeat;
+					background-position: center 120px;
+					background-size: auto 333.33px;
+				}
+				
+				.hongbao .open-btn {
+					display: block;
+					position: absolute;
+					width: auto;
+					height: 5rem;
+					left: 0;
+					right: 0;
+					margin: auto;
+					top: 200px;
+					-webkit-animation: open 0.2s linear 0.5s infinite alternate;
+					animation: open 0.2s linear 0.5s infinite alternate;
+					-webkit-animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+					animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+					z-index: 10;
+					cursor: pointer;
+				}
+				
+				.hongbao .open-top {
+					display: block;
+					position: absolute;
+					height: 120px;
+					top: 120px;
+					left: 0;
+					right: 0;
+					margin: auto;
+					opacity: 0;
+				}
+				
+				.hongbao .open-back {
+					display: block;
+					position: absolute;
+					width: auto;
+					height: 120px;
+					top: 0px;
+					left: 0;
+					right: 0;
+					margin: auto;
+					-webkit-transform-origin: bottom;
+					transform-origin: bottom;
+					-webkit-transform: rotateX(-180deg);
+					transform: rotateX(-180deg);
+					opacity: 0;
+				}
+				
+				.hongbao .open-back.open-on {
+					-webkit-animation: openBack linear .5s forwards;
+					animation: openBack linear .5s forwards;
+				}
+				
+				.hongbao.shake {
+					animation: shake .2s infinite linear;
+					-webkit-animation: shake .2s infinite linear;
+				}
+				.hongbao .draw-list {
+            position: absolute;
+            font-size: 16px;
+            width: 100%;
+            height: 6rem;
+            text-align: center;
+            color: #FFFFFF;
+            top: 200px;
+            opacity: 0;
+        }
+			</style>
+			<div class="hongbao">
+				<img class="open-btn" src="../../upload/open.png">
+				<img class="open-top" src="../../upload/open-back-1.png" />
+				<img class="open-back" src="../../upload/open-back-2.png" />
+				<div class="draw-list">恭喜您获得&nbsp;<span style="font-weight: 500;font-size: 20px;color: #F9F9F9;">15</span>&nbsp;元红包奖</div>
+			</div>
+			<script src="../../js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+				$(function() {
+					//红包点击
+					var hongbaoFlag = true //控制点击一次
+					$(".open-btn").click(function() {
+						if($('.open-back').hasClass('open-on')) {
+							return false;
+						}
+						if(hongbaoFlag)  {
+							hongbaoFlag = false;
+							$(".hongbao").addClass("shake")
+							setTimeout(function() {
+								$(".hongbao").removeClass("shake")
+							}, 1500)
+							setTimeout(function() {
+								$('.open-btn').fadeOut(100)
+							}, 1300)
+							setTimeout(function() {
+								$('.hongbao').css({
+									'backgroundImage': 'url(../../upload/open-before.png)'
+								})
+								$('.open-top').css({
+									'opacity': '1'
+								})
+								$('.open-back').addClass('open-on').css('opacity', '1')
+							}, 1600)
+							setTimeout(function() {
+								$(".draw-list").animate({'opacity':'1','top':'160px'},200)
+							}, 2500)
+						}
+					})
+				})
+			</script>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>白名单</title>
+		<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+	</head>
+	<body>
+		<div class="w">
+			<div class="tabGroup">
+				<div class="tabTitle clearfix"><span class="tabli onTab">白名单</span></div>
+				<div class="tabBody">
+					<div class="tabMain onMain">
+
+						<div class="row">
+							<div class="col-sm-7">
+								<div class="ibox">
+									<div class="ibox-content no-borders">
+										<div class="input-group">
+											<input type="text" class="inputFxheight pull-left mr-r5 m-b-xs" placeholder="请输入关键字" />
+											<select class="inputFxheight pull-left mr-r5 m-b-xs">
+												<option>--活动类型--</option>
+												<option>类型1</option>
+												<option>类型2</option>
+												<option>类型3</option>
+											</select>
+											<button class="btn btn-fx btn-sure pull-left mr-r5"><i class="fa fa-fw fa-search"></i>搜索</button>
+										</div>
+										<div class="clients-list">
+											<div class="tab-content">
+												<div class="tab-pane active" style="overflow-y: auto;min-height: 600px;">
+													<table class="table-default table table-striped table-hover">
+														<colgroup>
+															<col width="15%">
+															<col width="15%">
+															<col width="40%">
+															<col width="15%">
+															<col width="15%">
+														</colgroup>
+														<tbody class="text-center">
+															<tr>
+																<td class="client-avatar"><i class="fa fa-cube"></i></td>
+																<td>活动标题</td>
+																<td class="text-left" title="">活动描述活动描述活动描述活动描述活动描述活动描述活动描述活动描述活动描述活动</td>
+																<td>活动类型</td>
+																<td class="client-status">
+																	<button class="label label-primary no-borders">查看白名单</button>
+																</td>
+															</tr>
+															<tr>
+																<td class="client-avatar"><i class="fa fa-cube"></i></td>
+																<td>活动标题</td>
+																<td class="text-left" title="">活动描述活动描述活动描述活动描述活动描述活动描述活动描述活动</td>
+																<td>活动类型</td>
+																<td class="client-status">
+																	<button class="label label-primary no-borders">查看白名单</button>
+																</td>
+															</tr>
+															<tr>
+																<td class="client-avatar"><i class="fa fa-cube"></i></td>
+																<td>活动标题</td>
+																<td class="text-left" title="">活动描述活动描述活动描述活动描述活动描述活动描述活动描述活动</td>
+																<td>活动类型</td>
+																<td class="client-status">
+																	<button class="label label-primary no-borders">查看白名单</button>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-5">
+								<div class="ibox float-e-margins">
+									<div class="ibox-title">
+										<h5>白名单人员</h5>
+									</div>
+									<div class="ibox-content">
+										<div>
+											<div class="feed-activity-list">
+												<div class="feed-element">
+													<a href="#" class="pull-left">
+														<img alt="image" class="img-circle" src="../../images/a9.jpg">
+													</a>
+													<div class="media-body">
+														<strong>王小二</strong>
+														<button class="pull-right label label-cancel no-borders remove">移除白名单</button>
+														<br>
+														<small class="">
+															联系方式：<span class="">13888888888</span>
+														</small>
+													</div>
+												</div>
+												
+											</div>
+											<button class="btn btn-sure btn-block" id="addWhite"><i class="fa fa-plus"></i> 添加白名单</button>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+
+		<script src="../../js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../plugins/jquery.qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/root.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#addWhite').click(function() {
+					layer.open({
+						type: 2,
+						content: 'nameList.html',
+						area: ['1000px', '600px'],
+						title: '添加白名单',
+					})
+
+				})
+				$('#addActivity').click(function() {
+					layer.open({
+						type: 2,
+						content: 'activityList.html',
+						area: ['1000px', '600px'],
+						title: '设置白名单活动',
+					})
+
+				})
+				$('.remove').click(function() {
+					layer.confirm('确定要将此角色移除白名单？')
+				})
+
+			})
+		</script>
+	</body>
+
+</html>
